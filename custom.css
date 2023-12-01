@@ -5,14 +5,12 @@ body{
 }
 header{
     margin: auto;
-    background-color: rgba(1,1,1, .4);
-    display: inline-block;
+    text-align: center;
     border-radius: 2em;
 }
 h2{
-    background-color: rgba(1,1,1, .4);
-    border-radius: 2em;
     text-align: center;
+    grid-row: auto;
 }
 main{
     display: grid;
@@ -21,9 +19,7 @@ main{
     grid-template-areas: "box1 box1 box1" "box2 box 2 box3" "box4 box 4 box5";
     justify-content: space-around;
     margin: auto;
-}
-section{
-    background-color: rgba(1,1,1, .4);
+    background-color: rgba(1,1,1, .5);
     border-radius: 1em;
 }
 .box1{
