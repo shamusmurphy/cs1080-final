@@ -9,14 +9,15 @@ include 'top.php';
     <section class ="box3"> 
         <figure>
             <img src="images/sugarbushview.jpg" alt="Sugarbush Mountain">
-            <figcaption> Image of Sugarbush <br> ( <cite><a href="https://www.sugarbush.com/plan-your-trip/lodging/resort-condos">Sugarbush vacation packages </a>)</figcaption>
+            <figcaption> Sugarbush on a clear day. (<cite><a href="https://www.sugarbush.com/plan-your-trip/lodging/resort-condos">Sugarbush vacation packages</a>)</figcaption>
         </figure>
     </section>
-    <section>
+    <section class="box4">
         <table>
+            <caption>Yearly Snowfall at Sugarbush</caption>
             <tr>
                 <th>Year</th>
-                <th>Snowfall</th>
+                <th>Snowfall (inches)</th>
             </tr>
             <tr>
                 <td>2023</td>

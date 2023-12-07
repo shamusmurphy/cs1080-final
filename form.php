@@ -12,6 +12,7 @@
     $powder = 0;
     $mogul = 0;
     $question = '';
+    $night = '';
 
     function getData($field) {
         if (!isset($_POST[$field])) {
@@ -40,6 +41,7 @@
         $powder = (int) getData('chkPowder');
         $mogul = (int) getData('chkMogul');
         $question = getData('radQuestion');
+        $night = getData('radNight');
 
         print PHP_EOL . '<!-- Starting Validation -->' . PHP_EOL; 
         $dataIsGood = true;
@@ -83,6 +85,10 @@
         }
 
         if ($question != "Ski" AND $question != "Board" AND $question != "Both") {
+            $errorMessage .= '<p class="mistake">Please choose one.</p>';
+            $dataIsGood = false;
+        }
+        if ($night != "Yes" AND $night != "No" AND $night != "Maybe") {
             $errorMessage .= '<p class="mistake">Please choose one.</p>';
             $dataIsGood = false;
         }
@@ -160,6 +166,22 @@
                     <label for="radBoth">Both</label>
                 </p>
             </fieldset>
+            <fieldset class="radio">
+                <legend>Do you prefer nightlife near the mountain?</legend>
+                <p>
+                    <input type="radio" name="radNight" value="Yes" id="radYes" tabindex="300" <?php if($night == "Yes") print 'checked'; ?> required>
+                    <label for="radYes">Yes</label>
+                </p>
+                <p>
+                    <input type="radio" name="radNight" value="No" id="radNo" tabindex="310" <?php if($night == "No") print 'checked'; ?> required>
+                    <label for="radNo">No</label>
+                </p>
+                <p>
+                    <input type="radio" name="radNight" value="Maybe" id="radMaybe" tabindex="320" <?php if($night == "Maybe") print 'checked'; ?> required>
+                    <label for="radMaybe">Maybe</label>
+                </p>
+            </fieldset>
+
 
             <fieldset class="buttons">
                 <p>
