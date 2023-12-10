@@ -31,7 +31,7 @@
         return (preg_match ("/^([[:alnum:]]|-|\.| |\'|&|;|#)+$/", $testString));
     }
 
-    if($_SERVER["REQUEST_METHOD"] == 'POST')
+    if($_SERVER["REQUEST_METHOD"] == 'POST'){
         print PHP_EOL . '<!-- Starting Sanitization -->' . PHP_EOL;
 
         $firstName = getData('txtFirstName');
@@ -70,13 +70,13 @@
 
         $totalChecked = 0;
         
-        if($groom != 1) $groom = 0;
+        if($groom != 1){ $groom = 0;}
         $totalChecked += $groom;
 
-        if($powder != 1) $powder = 0;
+        if($powder != 1){$powder = 0;}
         $totalChecked += $powder;
 
-        if($mogul != 1) $mogul = 0;
+        if($mogul != 1){$mogul = 0;}
         $totalChecked += $mogul;
 
         if($totalChecked == 0){
@@ -92,6 +92,29 @@
             $errorMessage .= '<p class="mistake">Please choose one.</p>';
             $dataIsGood = false;
         }
+
+        print '<!-- Starting Saving -->';
+        if ($dataIsGood) {
+            $sql = 'INSERT INTO tblSurvey
+            (fldFirstName, fldLastName, fldEmail, fldGroom, fldPowder, fldMogul, fldQuestion, fldNight)';
+
+
+            $sql .= 'VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+            $data = array($firstName, $lastName, $email, $groom, $powder, $mogul, $question, $night);
+            $statement = $pdo->prepare($sql);
+    
+            try{
+                if($statement->execute($data)){
+                    $message .= '<h2>Thank you</h2>';
+                    $message .= '<p>Your information was successfully saved.</p>';
+                } else {
+                    $message .= '<p> Record was NOT successfully saved.</p>';
+                }
+            } catch (PDOException $e){
+                $message .= '<p>Couldn\'t insert the record, please contact someone</p>';
+            }
+        }
+    }
 ?>
 <body>
 <main>
