@@ -23,6 +23,12 @@ CREATE TABLE tblSurvery(
     fldNight VARCHAR(30)
 )
 
+INSERT INTO tblSurvey
+(pmkSurveyID, fldFirstName, fldLastName, fldEmail, fldGroom, fldPowder, fldMogul, fldQuestion, fldNight)
+VALUES
+(1, 'Tyler', 'Sheehan', 'tjsheeha@uvm.edu', 1, 1, 0, 'Ski', 'Maybe');
+
+
 </pre>
 
 </main>
