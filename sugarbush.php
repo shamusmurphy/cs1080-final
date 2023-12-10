@@ -19,22 +19,20 @@ include 'top.php';
                 <th>Year</th>
                 <th>Snowfall (inches)</th>
             </tr>
-            <tr>
-                <td>2023</td>
-                <td>50"</td>
-            </tr>
-            <tr>
-                <td>2022</td>
-                <td>126"</td>
-            </tr>
-            <tr>
-                <td>2021</td>
-                <td>188"</td>
-            </tr>
-            <tr>
-                <td>2020</td>
-                <td>133"</td>
-            </tr>
+            <?php
+            $sql = 'SELECT fldyear, fldsnow FROM tblSnowfall';
+            $statement = $pdo->prepare($sql);
+            $statement->execute();
+
+            $records = $statement->fetchAll();
+
+            foreach($records as $record){
+                print '<tr>';
+                print '<td>' .$record['fldyear'] . '</td>';
+                print '<td>' .$record['fldsnow'] . '"</td>';
+                print '</tr>' . PHP_EOL;
+            }
+            ?>
         </table>
 </main>
 <?php
