@@ -5,11 +5,18 @@ include 'top.php';
     <p>Create Table SQL</p>
 
 <pre>
---Up here should be for table in index--
+CREATE TABLE tblSnowfall(
+	pmkSnowfallID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fldyear YEAR,
+    fldsnow INT(200)
+)
 
+INSERT INTO tblSnowfall(fldyear, fldsnow) VALUES
+(2023, 50),
+(2022, 126),
+(2021, 188),
+(2020, 133)
 
-
--- this is for the form --
 
 CREATE TABLE tblSurvery(
 	pmkSurveyID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
