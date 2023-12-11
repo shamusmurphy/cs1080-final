@@ -53,7 +53,6 @@ nav{
     text-align: center;
     border-radius: 3em;
 }
-
 nav a:link{
     text-decoration: none;
 }
@@ -161,4 +160,83 @@ input[type=checkbox]+label{
 }
 input[type=radio]+label{
     cursor:pointer;
+}
+table{
+    margin: 0 auto;
+
+}
+.stowe .box4{
+    padding: 10% 5%;
+}
+a{
+    color: whitesmoke;
+}
+footer{
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+}
+.sugarbush .box6 {
+    grid-column: 3;
+    grid-row: 1/2;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 1em 1em 0 0;
+}
+.box6 p{
+    padding: 10% 5%;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 125%;
+    border-radius: 0 0 1em 1em;
+}
+.stowe .box5 p{
+    padding: 10% 5%;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 125%;
+    border-radius: 0 0 1em 1em;
+}
+.stowe .box5{
+    grid-column: 3;
+    grid-row: 1/2;
+    justify-content: center;
+    align-items: center;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 1em 1em 0 0;
+}
+.killington .box4{
+    grid-row: 1/2;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 1em 1em 0 0;
+}
+.killington .box4 p{
+    padding: 10% 5%;
+    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 125%;
+    border-radius: 0 0 1em 1em;
+}
+.stowe .box6{
+    grid-column: 2;
+    grid-row: 1/2;
+    padding: 5% 5%;
+}
+.stowe .box4{
+    grid-row: 2/4;
+    padding: 20% 5% 5% 5%;
+}
+.killington .box5{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.killington li{
+    padding: 5%;
+    font-size: 150%;
 }
