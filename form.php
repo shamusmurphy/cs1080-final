@@ -113,6 +113,25 @@
             } catch (PDOException $e){
                 $message .= '<p>Couldn\'t insert the record, please contact someone</p>';
             }
+
+            $to = $email;
+            $subject = 'Confirmation: Ski Survey Form Submission';
+            $messageBody = 'Thank you for submitting the Ski Survey form!';
+            $headers = 'From: tjsheeha@uvm.edu, smurph46@uvm.edu,msgoldsm@uvm.edu';
+
+            if ($night == 'Yes'){
+                $messageBody .= ' Due to your response, Killington is reccomended for you.';
+            } elseif($night == 'Maybe'){
+                $messageBody .= ' Due to your response, Killington and Stowe is recommended for you.';
+            }else{
+                $messageBody .= ' Due to your response, Sugarbush is recommended for you';
+            }
+
+            if (mail($to, $subject, $messageBody, $headers)){
+                $message .= '<p>Confirmation email sent</p>';
+            } else{
+                $message .= '<p>Confirmation email was not sent.</p>';
+            }
         }
     }
 ?>
